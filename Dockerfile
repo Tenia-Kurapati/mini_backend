@@ -6,8 +6,12 @@ WORKDIR /app
 
 # Install system dependencies for OpenCV and PyTorch
 RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
+    libgomp1 \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the current directory contents into the container at /app
